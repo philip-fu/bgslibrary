@@ -190,8 +190,8 @@ class BuildCMakeExt(build_ext, object):
         # wants to build those libs and scripts as well or move them to a
         # different place. See comments above for additional information
 
-with open("README.md", "r") as fh:
-    long_description = fh.read()
+#with open("README.md", "r") as fh:
+#    long_description = fh.read()
 
 setup(
     name='pybgs',
@@ -201,8 +201,6 @@ setup(
     url='https://github.com/andrewssobral/bgslibrary',
     license='MIT',
     description='Official Python wrapper for BGSLibrary',
-    long_description=long_description,
-    long_description_content_type="text/markdown",
     ext_modules=[CMakeExtension(name='pybgs', sourcedir='.')],
     cmdclass={
         'build_ext': BuildCMakeExt,
